@@ -6,7 +6,7 @@ function pack_build() {
     pack_args=${@:3}
     builder="gcr.io/cf-build-service-public/ci/kpack-builder" # builder used ci
 
-    pack build ${image} --builder ${builder} -e BP_GO_TARGETS=${target} ${pack_args} --publish --trust-builder
+#    pack build ${image} --builder ${builder} -e BP_GO_TARGETS=${target} ${pack_args} --publish --trust-builder
 
     docker pull ${image}
     resolved_image_name=$(docker inspect ${image} --format '{{index .RepoDigests 0}}' )
